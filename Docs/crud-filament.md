@@ -76,7 +76,7 @@ class ProductForm
                     ->required(),
                 FileUpload::make('gambar') # Gunakan FileUpload
                     ->image() 
-                    ->directory('product-images') # Folder yang akan di taruh gambar
+                    ->directory('images') # Folder yang akan di taruh gambar
                     ->storeFileNamesIn('gambar_nama_file'),
             ]);
     }
@@ -102,9 +102,9 @@ class ProductsTable
         return $table
             ->columns([
 
-                TextColumn::make('nama_produk')
+                TextColumn::make('col1')
                     ->searchable(),
-                TextColumn::make('category.nama_kategori')
+                TextColumn::make('col2')
                     ->searchable(),
                 ImageColumn::make('gambar'),
             ])
